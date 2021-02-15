@@ -1,0 +1,14 @@
+{
+  "version": "0.0.0",
+  "name": "XD Dogs - So Delicious",
+  "description": "XD Dogs - So Delicious",
+  "icons": {
+    "60": "/favicons/firefox_app_60x60.png",
+    "128": "/favicons/firefox_app_128x128.png",
+    "512": "/favicons/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Marketing Shakers",
+    "url": ""
+  }
+}

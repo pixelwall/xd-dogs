@@ -1,0 +1,4 @@
+.parallax {
+	will-change: transform;
+	transform: translate3d(var(--x), var(--y), 0);
+}
