@@ -1,5 +1,6 @@
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
+const dev = process.env.NODE_ENV === 'development'
 
 module.exports = {
   webpack: (config, { isServer }) => {
@@ -10,10 +11,10 @@ module.exports = {
 
     return config
   },
-  ...withPWA({
+  ...(dev ? {} : withPWA({
     pwa: {
       dest: 'public',
       runtimeCaching,
     },
-  })
+  }))
 }

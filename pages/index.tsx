@@ -7,6 +7,8 @@ import tw from 'twin.macro'
 import Viewport from '../components/viewport'
 import P from '../components/motion'
 
+const container = tw`px-6 w-full lg:w-10/12 mx-auto`
+
 const Space = ({ children }: { children?: ReactNode }) => (
   <Parallax
     bgImage="/images/space.webp"
@@ -70,7 +72,7 @@ export default function Home() {
             </svg>
           </div>
       </Space>
-      <div tw="italic" className={styles.intro} style={{padding: '3rem 0', overflow: 'hidden'}}>
+      <div tw="italic" className={styles.intro} style={{paddingTop: '3rem', overflow: 'hidden'}}>
         <Viewport
           tw="mt-32 w-full flex justify-center items-end"
           oneWay
@@ -94,7 +96,8 @@ export default function Home() {
         />
         <Viewport
           oneWay
-          tw="p-6 w-full lg:w-10/12 flex flex-col lg:flex-row lg:justify-between mx-auto lg:items-end"
+          tw="p-6 flex flex-col lg:flex-row lg:justify-between lg:items-end"
+          css={container}
           top={200}
           style={{['--animate-time' as any]: '1s'}}>
           <div
@@ -105,30 +108,39 @@ export default function Home() {
             <SpaceNeedleImage/>
           </div>
           <div
-            tw="text-6xl lg:text-8xl font-bold text-white w-full lg:w-1/2 -mt-16 lg:-ml-24 z-20 lg:mt-0 lg:mb-16"
+            tw="text-6xl lg:text-8xl font-bold text-white w-full sm:w-1/2 -mt-16 lg:-ml-24 z-20 lg:mt-0 lg:mb-16"
             className="font-title animate"
             style={{transitionDelay: '200ms', ['--animate-y' as any]: '-3rem'}}
           >So<br/> Delicious</div>
         </Viewport>
         <Viewport
           oneWay
-          tw="p-6 w-full lg:w-10/12 flex flex-col-reverse lg:flex-row lg:justify-between mx-auto lg:items-center"
+          tw="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center"
+          css={container}
           style={{['--animate-time' as any]: '1s'}}
         >
           <div
-            tw="text-6xl lg:text-6xl font-bold text-white w-full lg:w-1/2 z-20 lg:mt-0 italic"
+            tw="text-6xl lg:text-6xl font-bold text-white w-full sm:w-1/2 z-20 sm:mt-0 italic"
             className="font-title animate"
             style={{['--animate-x' as any]: '-3rem'}}
           ><span tw="text-2xl">And we</span><br/>come in<br/><span tw="text-8xl">Peace</span></div>
-          <div tw="w-full lg:w-1/2 relative">
+          <div tw="w-full sm:w-1/2 relative">
             <div tw="flex justify-end">
-              <P negative scaleFactor={4}>
+              <P negative scaleFactor={3}>
                 <Ufo/>
               </P>
             </div>
           </div>
         </Viewport>
-        <div tw="w-full h-screen"></div>
+
+        <div tw="w-full">
+          <div tw="w-full bg-gradient-to-b from-transparent to-blue-800 opacity-25" style={{height: '30vh'}}>
+          </div>
+          <div tw="bg-blue-800 bg-opacity-25">
+            <div tw="h-screen" css={container}>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )

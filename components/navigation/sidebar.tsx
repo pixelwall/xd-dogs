@@ -10,7 +10,7 @@ const ParentLink = ({idx, title, href, childrens}: {
   href?: string,
   childrens?: any[],
 }) => {
-  const css: CSSProperties = { transitionDelay: `${idx * 200}ms` }
+  const css: CSSProperties = { transitionDelay: `${idx * 200}ms`, fontStyle: 'italic', paddingRight: '0.5rem' }
   if (childrens) {
     return (
       <div className="header__sidebar-link">
