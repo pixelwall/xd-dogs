@@ -4,7 +4,11 @@ export default [
     href: '/',
   },
   {
-    titulo: 'Price guide',
-    href: '/guide',
+    titulo: 'Locations',
+    href: '/locations',
+  },
+  {
+    titulo: 'Menu',
+    href: '/menu',
   },
 ]

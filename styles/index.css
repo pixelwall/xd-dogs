@@ -96,3 +96,34 @@ body {
 	padding: 1.33rem;
 	backdrop-filter: blur(5px);
 }
+
+@keyframes gradient-y {
+	0%, 100% {
+		background-size:400% 400%;
+		background-position: center top
+	}
+	50% {
+		background-size:200% 200%;
+		background-position: center center
+	}
+}
+@keyframes gradient-x {
+	0%, 100% {
+		background-size:200% 200%;
+		background-position: left center
+	}
+	50% {
+		background-size:200% 200%;
+		background-position: right center
+	}
+}
+@keyframes gradient-xy {
+	0%, 100% {
+		background-size:400% 400%;
+		background-position: left center
+	}
+	50% {
+		background-size:200% 200%;
+		background-position: right center
+	}
+}

@@ -1,11 +1,12 @@
 /// <reference lib="dom" />
 import styles from './_index.module.css'
-import { ReactNode } from 'react'
+import { Fragment, ReactNode, useRef } from 'react'
 import { Parallax } from 'react-parallax'
 import Image from 'next/image'
 import tw from 'twin.macro'
 import Viewport from '../components/viewport'
 import P from '../components/motion'
+import Link from 'next/link'
 
 const container = tw`px-6 w-full lg:w-10/12 mx-auto`
 
@@ -44,7 +45,7 @@ const SpaceNeedleImage = () => (
 const Ufo = () => (
   <div className={styles.ufo}>
     <Image
-      src="/images/ufo.png"
+      src={`/images/ufo.png`}
       alt="UFO"
       quality={60}
       layout="intrinsic"
@@ -61,18 +62,58 @@ const Ufo = () => (
   </div>
 )
 
+const Truck = () => (
+  <>
+    <Image
+      src={`/images/truck.png`}
+      alt="Food truck"
+      quality={60}
+      layout="intrinsic"
+      width={766}
+      height={431}
+      className="ufo"
+      loading="eager"
+    />
+    <style jsx global>{`{
+      .ufo {
+        margin: auto;
+      }
+    }`}</style>
+  </>
+)
+
+const Hotdog = () => (
+  <>
+    <Image
+      src={`/images/hotdog.png`}
+      alt="Hot Dog"
+      quality={60}
+      layout="intrinsic"
+      width={649}
+      height={649}
+      className="ufo"
+      loading="eager"
+    />
+    <style jsx global>{`{
+      .ufo {
+        margin: auto;
+      }
+    }`}</style>
+  </>
+)
+
 export default function Home() {
   return (
     <>
       <Space>
-          <div className={styles.hero}>
-            <img src="/images/logo.webp" className={styles.logo} alt="XD Dogs"/>
-          </div>
-          <div className={styles.heroDivider}>
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
-            </svg>
-          </div>
+        <div className={styles.hero}>
+          <img src="/images/logo.webp" className={styles.logo} alt="XD Dogs"/>
+        </div>
+        <div className={styles.heroDivider}>
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M600,112.77C268.63,112.77,0,65.52,0,7.23V120H1200V7.23C1200,65.52,931.37,112.77,600,112.77Z" className="shape-fill"></path>
+          </svg>
+        </div>
       </Space>
       <div tw="italic" className={styles.intro} style={{paddingTop: '3rem', overflow: 'hidden'}}>
         <Viewport
@@ -105,7 +146,7 @@ export default function Home() {
           <div
             className="animate animateOut"
             tw="w-full h-64 lg:h-80 lg:w-2/3 relative overflow-hidden shadow-xl rounded-br-full rounded-tl-lg rounded-xl bg-gray-800"
-            style={{height: '75vh', ['--animate-y' as any]: '3rem'}}
+            style={{height: '75vh', ['--animate-x' as any]: '-3rem'}}
           >
             <SpaceNeedleImage/>
           </div>
@@ -128,20 +169,64 @@ export default function Home() {
           ><span tw="text-2xl">And we</span><br/>come in<br/><span tw="text-8xl">Peace</span></div>
           <div tw="w-full sm:w-1/2 relative">
             <div tw="flex justify-end">
-              <P negative scaleFactor={3}>
+              <P negative scaleFactor={4}>
                 <Ufo/>
               </P>
             </div>
           </div>
         </Viewport>
 
-        <div tw="w-full">
-          <div tw="w-full bg-gradient-to-b from-transparent to-blue-800 opacity-25" style={{height: '30vh'}}>
+        <div tw="w-full relative py-16">
+          <div tw="w-full absolute h-full bg-gradient-to-b from-transparent to-pink-800 opacity-25">
           </div>
-          <div tw="bg-blue-800 bg-opacity-25">
-            <div tw="h-screen" css={container}>
+          <Viewport
+            oneWay
+            tw="flex flex-col-reverse sm:flex-row-reverse sm:justify-between sm:items-center"
+            css={container}
+            style={{['--animate-time' as any]: '1s'}}
+          >
+            <div
+              tw="text-6xl lg:text-6xl font-bold text-white w-full sm:w-auto z-20 sm:mt-0 italic flex flex-col text-right"
+              className="font-title animate"
+              style={{['--animate-x' as any]: '3rem'}}
+            >
+              <span tw="text-2xl pr-6">If you're hungry</span>
+              <span css={tw`bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 text-transparent pr-6 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
+                <Link href="/locations">
+                  <a>FOUND US HERE</a>
+                </Link>
+              </span>
             </div>
-          </div>
+            <div tw="w-full sm:w-1/2 relative" className="animate" style={{['--animate-x' as any]: '-3rem', transitionDelay: '400ms'}}>
+              <div tw="flex justify-end">
+                <img src="/images/truck.svg" alt="" tw="w-full sm:pr-16"/>
+              </div>
+            </div>
+          </Viewport>
+          <Viewport
+            oneWay
+            tw="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-center"
+            css={container}
+            style={{['--animate-time' as any]: '1s'}}
+          >
+            <div
+              tw="text-6xl lg:text-6xl font-bold text-white w-full sm:w-auto z-20 sm:mt-0 italic flex flex-col"
+              className="font-title animate"
+              style={{['--animate-x' as any]: '-3rem'}}
+            >
+              <span tw="text-2xl">But if you can't wait</span>
+              <span css={tw`bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 text-transparent pr-6 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
+                <Link href="/menu">
+                  <a>ORDER NOW</a>
+                </Link>
+              </span>
+            </div>
+            <div tw="w-full sm:w-1/2 relative" className="animate" style={{['--animate-x' as any]: '3rem', transitionDelay: '400ms'}}>
+              <div tw="flex justify-end sm:pl-16">
+                <Hotdog/>
+              </div>
+            </div>
+          </Viewport>
         </div>
       </div>
     </>
