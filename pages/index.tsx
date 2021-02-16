@@ -1,26 +1,10 @@
-/// <reference lib="dom" />
 import styles from './_index.module.css'
-import { Fragment, ReactNode, useRef } from 'react'
-import { Parallax } from 'react-parallax'
 import Image from 'next/image'
 import tw from 'twin.macro'
 import Viewport from '../components/viewport'
 import P from '../components/motion'
+import { Space, container } from '../components/utils'
 import Link from 'next/link'
-
-const container = tw`px-6 w-full lg:w-10/12 mx-auto`
-
-const Space = ({ children }: { children?: ReactNode }) => (
-  <Parallax
-    bgImage="/images/space.webp"
-    strength={300}
-    style={{ width: '100%', height: '100%', backgroundColor: '#01266A' }}
-    bgStyle={{ width: '100%', height: '100%' }}
-    bgImageStyle={{ width: "100%", height: '100%', objectFit: 'cover' }}
-  >
-    {children}
-  </Parallax>
-)
 
 const SpaceNeedleImage = () => (
   <>
@@ -60,26 +44,6 @@ const Ufo = () => (
       }
     }`}</style>
   </div>
-)
-
-const Truck = () => (
-  <>
-    <Image
-      src={`/images/truck.png`}
-      alt="Food truck"
-      quality={60}
-      layout="intrinsic"
-      width={766}
-      height={431}
-      className="ufo"
-      loading="eager"
-    />
-    <style jsx global>{`{
-      .ufo {
-        margin: auto;
-      }
-    }`}</style>
-  </>
 )
 
 const Hotdog = () => (
@@ -193,7 +157,7 @@ export default function Home() {
               <span tw="text-2xl pr-6">If you're hungry</span>
               <span css={tw`bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 text-transparent pr-6 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
                 <Link href="/locations">
-                  <a>FOUND US HERE</a>
+                  <a>FIND US HERE</a>
                 </Link>
               </span>
             </div>
