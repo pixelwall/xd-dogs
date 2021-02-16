@@ -1,5 +1,3 @@
-import styles from './parallax.module.css'
-
 import { HTMLAttributes, RefObject, useEffect, useRef, useState } from 'react'
 
 export interface ParallaxProps
@@ -59,7 +57,14 @@ export default function ParallaxObject({
   useEffect(render)
 
   return (
-    <div {...props} className={`${styles.parallax}`} ref={ref}>
+    <div
+      {...props}
+      style={{
+        willChange: 'transform',
+        transform: 'translate3d(var(--x), var(--y), 0)',
+      }}
+      ref={ref}
+    >
       {props.children}
     </div>
   )

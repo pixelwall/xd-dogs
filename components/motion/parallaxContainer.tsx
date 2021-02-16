@@ -10,7 +10,7 @@ export default function ParallaxContainer({ plusHeight, setOffset = () => {}, ..
   const offsetState = useState<number>(null)
   const ref: RefObject<HTMLDivElement> = useRef(null)
 
-  useOffset({ setter: offsetState[1], ref: ref, top: !plusHeight }, (val) => {
+  useOffset({ setter: offsetState[1], ref: ref }, (val) => {
     setOffset(val)
   })
 

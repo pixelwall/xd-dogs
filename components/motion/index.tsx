@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import ParallaxContainer from './parallaxContainer'
-import ParallaxObject, { ParallaxObjectProps, ParallaxProps } from "./parallaxObject"
+import ParallaxObject, { ParallaxProps } from "./parallaxObject"
 
 export { ParallaxContainer, ParallaxObject }
 
