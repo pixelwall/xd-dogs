@@ -3,6 +3,7 @@ import type { RefObject, CSSProperties } from 'react'
 import { useRef, useEffect } from 'react'
 import links from './navigation'
 import Link from 'next/link'
+import s from './navigation.module.css'
 
 const ParentLink = ({idx, title, href, childrens}: {
   idx: number,
@@ -13,14 +14,14 @@ const ParentLink = ({idx, title, href, childrens}: {
   const css: CSSProperties = { transitionDelay: `${idx * 200}ms`, fontStyle: 'italic', paddingRight: '0.5rem' }
   if (childrens) {
     return (
-      <div className="header__sidebar-link">
+      <div className={s.sidebarLink}>
         <p className="t-h1" style={css}>{title}</p>
       </div>
     )
   } else {
     return (
       <Link href={href}>
-        <a className="header__sidebar-link">
+        <a className={s.sidebarLink}>
           <p className="t-h1" style={css}>{title}</p>
         </a>
       </Link>
@@ -60,8 +61,12 @@ export default function Sidebar({ open = false, toggle }: { open: boolean, toggl
   })
 
   return (
-    <aside className={`header__sidebar ${open ? 'open' : ''}`} ref={sidebarRef}>
-      <div className="header__sidebar-wrapper">
+    <aside
+      className={`${s.sidebar} ${open ? 'open' : ''}`}
+      ref={sidebarRef}
+      style={{ transform: `translateX(${open ? '0' : '100'}%)` }}
+    >
+      <div className={s.sidebarWrapper}>
         <Parents/>
       </div>
     </aside>

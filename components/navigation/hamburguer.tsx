@@ -1,6 +1,7 @@
 /// <reference lib="dom" />
 import type { RefObject } from 'react'
 import React, { useRef } from 'react'
+import s from './navigation.module.css'
 
 export default function Hamburger({ open, toggle }: { open: boolean, toggle: () => void }) {
   const buttonRef: RefObject<HTMLButtonElement> = useRef(null)
@@ -8,7 +9,7 @@ export default function Hamburger({ open, toggle }: { open: boolean, toggle: () 
     <button
       aria-label="Menu"
       title="Menu"
-      className={`header__hamburguer ${open ? 'open' : ''}`}
+      className={`${s.hamburguer} ${open ? 'open' : ''}`}
       onClick={toggle}
       ref={buttonRef}
     >

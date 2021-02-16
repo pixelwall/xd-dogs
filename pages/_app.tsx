@@ -1,5 +1,4 @@
 import '../styles/index.css'
-import '../styles/navigation.css'
 
 import type { AppProps } from 'next/app'
 

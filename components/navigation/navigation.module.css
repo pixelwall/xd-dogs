@@ -5,7 +5,7 @@
 	pointer-events: none;
 }
 
-.header__wrapper {
+.headerWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
@@ -14,7 +14,7 @@
 	pointer-events: none;
 }
 
-.header__hamburguer {
+.hamburguer {
 	z-index: 20;
 	cursor: pointer;
 	transition: color 0.2s ease-in-out;
@@ -23,39 +23,39 @@
 	pointer-events: auto;
 }
 
-.header__hamburguer:focus {
+.hamburguer:focus {
 	outline: none;
 }
 
-.header__hamburguer svg {
+.hamburguer :global svg {
     min-height: 24px;
     transition: transform 0.2s ease-in-out;
 }
 
-.header__hamburguer line {
+.hamburguer :global line {
 	stroke: white;
 	stroke-width: 3;
 	transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 
-.header__hamburguer.open svg {
+.hamburguer:global(.open) :global(svg) {
 	transform: scale(0.8)
 }
 
-.header__hamburguer.open #top {
+.hamburguer:global(.open) :global(#top) {
 	transform: translate(6px, 0px) rotate(45deg)
 }
 
-.header__hamburguer.open #middle {
+.hamburguer:global(.open) :global(#middle) {
 	opacity: 0;
 	transform: translateX(100%);
 }
 
-.header__hamburguer.open #bottom {
+.hamburguer:global(.open) :global(#bottom) {
 	transform: translate(-12px, 9px) rotate(-45deg)
 }
 
-.header__sidebar {
+.sidebar {
 	font-family: "Merriweather Sans", "Helvetica Neue", Helvetica, Arial sans-serif;
 	position: absolute;
 	right: 0;
@@ -65,9 +65,10 @@
 	font-weight: 300;
 	pointer-events: auto;
 	backdrop-filter: blur(20px);
+	transition: transform 0.6s;
 }
 
-.header__sidebar::after {
+.sidebar::after {
 	position: absolute;
 	content: "";
 	opacity: 0.8;
@@ -83,21 +84,12 @@
 }
 
 @media (min-width: 768px) {
-	.header__sidebar {
+	.sidebar {
 		width: auto;
 	}
 }
 
-.header__sidebar {
-	transform: translateX(100%);
-	transition: transform 0.6s;
-}
-
-.header__sidebar.open {
-	transform: translateX(0%);
-}
-
-.header__sidebar-wrapper {
+.sidebarWrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
@@ -107,7 +99,7 @@
 	font-weight: bold;
 }
 
-.header__sidebar-link {
+.sidebarLink {
 	margin: 1rem 0;
 	padding: 0.2rem 0;
 	display: flex;
@@ -120,15 +112,15 @@
 	transition: border-color 0.1s;
 }
 
-.header__sidebar-link p {
+.sidebarLink :global(p) {
 	transition: transform 1.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
 	padding: 0.1rem 0;
 }
 
-.header__sidebar:not(.open) .header__sidebar-link p {
+.sidebar:not(:global(.open)) .sidebarLink :global(p) {
 	transform: translateY(200%) rotate(6deg);
 }
 
-.header__sidebar-link:hover {
+.sidebarLink:hover {
 	--border: white;
 }
