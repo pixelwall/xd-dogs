@@ -1,17 +1,14 @@
 /// <reference lib="dom" />
 import type { RefObject } from 'react'
-import React, { useRef, useEffect } from 'react'
+import React, { useRef } from 'react'
 
 export default function Hamburger({ open, toggle }: { open: boolean, toggle: () => void }) {
   const buttonRef: RefObject<HTMLButtonElement> = useRef(null)
-  useEffect(() => {
-    buttonRef.current?.classList.toggle('open', open)
-  })
   return (
     <button
       aria-label="Menu"
       title="Menu"
-      className="header__hamburguer"
+      className={`header__hamburguer ${open ? 'open' : ''}`}
       onClick={toggle}
       ref={buttonRef}
     >

@@ -50,7 +50,7 @@ const useOutsideClick = (ref: RefObject<HTMLElement>, callback: CallableFunction
   })
 }
 
-export default function Sidebar({ open, toggle }: { open: boolean, toggle: () => void }) {
+export default function Sidebar({ open = false, toggle }: { open: boolean, toggle: () => void }) {
   const sidebarRef: RefObject<HTMLElement> = useRef(null)
 
   useOutsideClick(sidebarRef, () => {
