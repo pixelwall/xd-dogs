@@ -12,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>XD Dogs - So Delicious</title>
+        <meta name="description" content="We are so delicious"/>
       </Head>
 
       <GlobalStyles />

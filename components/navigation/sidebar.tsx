@@ -52,9 +52,6 @@ const useOutsideClick = (ref: RefObject<HTMLElement>, callback: CallableFunction
 
 export default function Sidebar({ open, toggle }: { open: boolean, toggle: () => void }) {
   const sidebarRef: RefObject<HTMLElement> = useRef(null)
-  useEffect(() => {
-    sidebarRef.current?.classList.toggle('open', open)
-  })
 
   useOutsideClick(sidebarRef, () => {
     if (open) {
@@ -63,7 +60,7 @@ export default function Sidebar({ open, toggle }: { open: boolean, toggle: () =>
   })
 
   return (
-    <aside className="header__sidebar" ref={sidebarRef}>
+    <aside className={`header__sidebar ${open ? 'open' : ''}`} ref={sidebarRef}>
       <div className="header__sidebar-wrapper">
         <Parents/>
       </div>
