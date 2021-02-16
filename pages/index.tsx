@@ -13,7 +13,7 @@ const Space = ({ children }: { children?: ReactNode }) => (
   <Parallax
     bgImage="/images/space.webp"
     strength={300}
-    style={{ width: '100%', height: '100%' }}
+    style={{ width: '100%', height: '100%', backgroundColor: '#01266A' }}
     bgStyle={{ width: '100%', height: '100%' }}
     bgImageStyle={{ width: "100%", height: '100%', objectFit: 'cover' }}
   >
@@ -25,6 +25,7 @@ const SpaceNeedleImage = () => (
   <>
     <Image
       src="/images/needle.jpg"
+      alt="Space Needle"
       quality={60}
       layout="fill"
       className="space-needle"
@@ -44,6 +45,7 @@ const Ufo = () => (
   <div className={styles.ufo}>
     <Image
       src="/images/ufo.png"
+      alt="UFO"
       quality={60}
       layout="intrinsic"
       width={800}
