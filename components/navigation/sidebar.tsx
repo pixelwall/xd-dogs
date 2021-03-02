@@ -5,11 +5,12 @@ import links from './navigation'
 import Link from 'next/link'
 import s from './navigation.module.css'
 
-const ParentLink = ({idx, title, href, childrens}: {
+const ParentLink = ({idx, title, href, childrens, toggle}: {
   idx: number,
   title: string,
   href?: string,
   childrens?: any[],
+  toggle?: () => void
 }) => {
   const css: CSSProperties = { transitionDelay: `${idx * 200}ms`, fontStyle: 'italic', paddingRight: '0.5rem' }
   if (childrens) {
@@ -21,7 +22,7 @@ const ParentLink = ({idx, title, href, childrens}: {
   } else {
     return (
       <Link href={href}>
-        <a className={s.sidebarLink}>
+        <a className={s.sidebarLink} onClick={toggle}>
           <p className="t-h1" style={css}>{title}</p>
         </a>
       </Link>
@@ -29,9 +30,9 @@ const ParentLink = ({idx, title, href, childrens}: {
   }
 }
 
-const Parents = () => (
+const Parents = ({ toggle }: { toggle: () => void }) => (
   <div>
-    {links.map((l, idx) => (<ParentLink title={l.titulo} key={idx} idx={idx} href={l.href}/>))}
+    {links.map((l, idx) => (<ParentLink title={l.titulo} key={idx} idx={idx} href={l.href} toggle={toggle}/>))}
   </div>
 )
 
@@ -67,7 +68,7 @@ export default function Sidebar({ open = false, toggle }: { open: boolean, toggl
       style={{ transform: `translateX(${open ? '0' : '100'}%)` }}
     >
       <div className={s.sidebarWrapper}>
-        <Parents/>
+        <Parents toggle={toggle}/>
       </div>
     </aside>
   )
