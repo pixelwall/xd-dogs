@@ -129,10 +129,10 @@ export default function Home() {
           style={{['--animate-time' as any]: '1s'}}
         >
           <div
-            tw="text-4xl lg:text-4xl font-bold text-white w-full sm:w-1/2 z-20 sm:mt-0 italic"
+            tw="text-4xl lg:text-6xl font-bold text-white w-full sm:w-1/2 z-20 sm:mt-0 italic"
             className="font-title animate"
             style={{['--animate-x' as any]: '-3rem'}}
-          ><span tw="text-2xl">And your</span><br/>stomach will<br/><span tw="text-5xl">thank you!</span></div>
+          ><span tw="text-2xl">And your</span><br/>stomach will<br/><span tw="text-5xl lg:text-7xl">thank you!</span></div>
           <div tw="w-full sm:w-1/2 relative">
             <div tw="flex justify-end">
               <P negative scaleFactor={4}>
