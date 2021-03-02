@@ -27,6 +27,7 @@ query EntryQuery($slug: String) {
     title
     entries {
       title
+      price
       contains
     }
   }
@@ -77,7 +78,7 @@ const Menu = ({ entry }: { entry: MenuModel }) => (
       {entry.entries?.map((v: Entry, i: number) => (
         <ul style={{listStyleType: 'circle'}} key={i} tw="pl-6 space-y-6 my-2" className="t-p">
           <li>
-            <div tw="font-bold">{v.title}</div>
+            <div tw="font-bold">{v.title} - {v.price}$</div>
             {v.contains && <ul style={{listStyleType: 'circle'}} key={i} tw="pl-6">
               {v.contains.map((c: string, i: number) => (
                 <li key={i}>{capitalizeFirstLetter(c)}</li>

@@ -1,5 +1,6 @@
 export interface Entry {
-  title: string
+  title?: string
+  price?: number
   contains?: string[]
 }
 

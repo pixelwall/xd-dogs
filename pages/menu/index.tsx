@@ -12,10 +12,6 @@ query {
   allMenus {
     slug
     title
-    entries {
-      title
-      contains
-    }
   }
 }`
 
