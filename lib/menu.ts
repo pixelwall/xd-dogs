@@ -8,6 +8,12 @@ export interface MenuType {
   menu: Entry[]
 }
 
+export interface MenuModel {
+  slug?: string
+  title?: string
+  entries?: Entry[]
+}
+
 export const menu: MenuType[] = [
   {
     title: 'Hot Dogs',

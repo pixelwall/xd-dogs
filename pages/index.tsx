@@ -29,7 +29,7 @@ const SpaceNeedleImage = () => (
 const Ufo = () => (
   <div className={styles.ufo}>
     <Image
-      src={`/images/ufo.png`}
+      src={`/images/burger.png`}
       alt="UFO"
       quality={60}
       layout="intrinsic"
@@ -81,7 +81,7 @@ export default function Home() {
       </Space>
       <div tw="italic" className={styles.intro} style={{paddingTop: '3rem', overflow: 'hidden'}}>
         <Viewport
-          tw="mt-32 w-full flex justify-center items-end"
+          tw="my-32 w-full flex justify-center items-end"
           oneWay
           style={{
             ['--animate-time' as any]: '1s',
@@ -94,13 +94,15 @@ export default function Home() {
             <p tw="text-center text-5xl lg:text-6xl text-white font-bold" className="font-title animate">We are...</p>
           </div>
         </Viewport>
-        <Viewport
-          tw="w-px border border-white mx-auto border-dashed my-6 mt-12"
-          className="animate animateOut"
-          style={{height: '25vh'}}
-          oneWay
-          top={200}
-        />
+        {
+        //<Viewport
+        //  tw="w-px border border-white mx-auto border-dashed my-6 mt-12"
+        //  className="animate animateOut"
+        //  style={{height: '25vh'}}
+        //  oneWay
+        //  top={200}
+        //>
+        }
         <Viewport
           oneWay
           tw="p-6 flex flex-col lg:flex-row lg:justify-between lg:items-end"
@@ -130,7 +132,7 @@ export default function Home() {
             tw="text-6xl lg:text-6xl font-bold text-white w-full sm:w-1/2 z-20 sm:mt-0 italic"
             className="font-title animate"
             style={{['--animate-x' as any]: '-3rem'}}
-          ><span tw="text-2xl">And we</span><br/>come in<br/><span tw="text-8xl">Peace</span></div>
+          ><span tw="text-2xl">And your stomach</span><br/>would be<br/><span tw="text-8xl">Grateful</span></div>
           <div tw="w-full sm:w-1/2 relative">
             <div tw="flex justify-end">
               <P negative scaleFactor={4}>
@@ -155,7 +157,7 @@ export default function Home() {
               style={{['--animate-x' as any]: '3rem'}}
             >
               <span tw="text-2xl pr-6">If you're hungry</span>
-              <span css={tw`bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 text-transparent pr-6 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
+              <span css={tw`pr-6 text-transparent bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
                 <Link href="/locations">
                   <a>FIND US HERE</a>
                 </Link>
@@ -179,7 +181,7 @@ export default function Home() {
               style={{['--animate-x' as any]: '-3rem'}}
             >
               <span tw="text-2xl">But if you can't wait</span>
-              <span css={tw`bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 text-transparent pr-6 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
+              <span css={tw`pr-6 text-transparent bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
                 <Link href="/menu">
                   <a>ORDER NOW</a>
                 </Link>
@@ -189,6 +191,28 @@ export default function Home() {
               <div tw="flex justify-end sm:pl-16">
                 <Hotdog/>
               </div>
+            </div>
+          </Viewport>
+
+          <Viewport
+            oneWay
+            tw="w-full sm:justify-between sm:items-center mt-24"
+            css={container}
+            style={{['--animate-time' as any]: '1s'}}
+          >
+            <div
+              tw="text-2xl lg:text-5xl font-bold text-white w-full sm:w-auto z-20 sm:mt-0 italic flex flex-col text-center"
+              className="font-title animate"
+              style={{['--animate-y' as any]: '2rem'}}
+            >
+              <span tw="text-2xl text-center">If you want to see us</span>
+              <span css={tw`py-2 text-transparent bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
+                <a href="tel:+14253269856">CALL US<br/>(+1 4253269856)</a>
+              </span>
+              <span tw="text-2xl text-center">or</span>
+              <span css={tw`py-2 text-transparent bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 animate-gradient-x bg-clip-text transform hover:scale-95 duration-200`}>
+                <a href="mailto:xddogs21@gmail.com">MAIL US<br/>(xddogs21@gmail.com)</a>
+              </span>
             </div>
           </Viewport>
         </div>
