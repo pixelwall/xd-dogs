@@ -18,7 +18,7 @@ export default function MenuPage({ menus }: { menus: MenuModel[] }) {
             <div css={container} tw="py-16">
               <div tw="mx-auto">
                 <Link href="/">
-                  <a><img src="/images/logo.webp" className={styles.logo} tw="w-3/5 sm:w-2/5 lg:w-1/5 h-auto" alt="XD Dogs"/></a>
+                  <a style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}><img src="/images/logo.webp" className={styles.logo} tw="w-3/5 sm:w-2/5 lg:w-1/5 h-auto" alt="XD Dogs"/></a>
                 </Link>
               </div>
               <V className="animate" tw="my-8 mt-8" style={{['--animate-x' as any]: '-3rem'}} once>
