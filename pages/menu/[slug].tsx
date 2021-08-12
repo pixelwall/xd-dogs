@@ -2,13 +2,11 @@ import styles from '../_index.module.css'
 import { Space, container } from '../../components/utils'
 import Link from 'next/link'
 import Head from 'next/head'
-import type { NextPageContext } from 'next/types'
 import tw from 'twin.macro'
 import V from '../../components/viewport'
 import { ReactNode } from 'react'
-import type { MenuType, Entry, MenuModel } from '../../lib/menu'
+import type { Entry, MenuModel } from '../../lib/menu'
 import { request } from '../../lib/datocms'
-import { entries } from '../../lib/menu'
 
 const button = tw`text-transparent text-white rounded-full bg-gradient-to-r from-blue-200 to-pink-500 via-purple-400 animate-gradient-x transform hover:scale-95 duration-200`
 const buttonSec = tw`text-transparent text-white rounded-full bg-gradient-to-r from-pink-300 to-purple-500 via-red-400 animate-gradient-x transform hover:scale-95 duration-200`
@@ -90,7 +88,7 @@ const Menu = ({ entry }: { entry: MenuModel }) => (
       ))}
     </Card>
 
-    <div tw="flex w-full" className="t-h3 animate">
+    <div tw="flex w-full" className="animate t-h3">
       <div tw="mx-auto flex italic" className="t-h3">
         <Order/>
       </div>
@@ -125,7 +123,7 @@ export default function MenuPage({ menus }: { menus: MenuModel }) {
               <h1 tw="italic font-bold text-6xl text-center" className="font-title">{menus.title} menu</h1>
             </V>
 
-            <V tw="flex w-full" className="t-h3 animate" style={{['--animate-x' as any]: '3rem'}} oneWay>
+            <V tw="flex w-full" className="animate t-h3" style={{['--animate-x' as any]: '3rem'}} oneWay>
               <div tw="ml-auto flex italic" className="t-h3">
                 <Link href="/menu">
                   <a>
